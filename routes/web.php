@@ -6,6 +6,7 @@ use App\Http\Controllers\Documentation\ReferencesController;
 use App\Http\Controllers\Logs\AuditLogsController;
 use App\Http\Controllers\Logs\SystemLogsController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,6 +51,9 @@ Route::middleware('auth')->group(function () {
         Route::put('settings/email', [SettingsController::class, 'changeEmail'])->name('settings.changeEmail');
         Route::put('settings/password', [SettingsController::class, 'changePassword'])->name('settings.changePassword');
     });
+
+    // Products pages
+    Route::resource('products', ProductController::class);
 
     // Logs pages
     Route::prefix('log')->name('log.')->group(function () {

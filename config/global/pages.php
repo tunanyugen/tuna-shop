@@ -129,21 +129,13 @@ return array(
     ),
 
     'products' => array(
-        'add' => array(
-            'title'  => 'Add New Product',
-            'view'   => 'products/add',
+        'create' => array(
+            'title'  => 'Create New Product',
+            'view'   => 'products/create',
             'assets' => array(
                 'custom' => array(
-                    'js' => array(),
-                ),
-            ),
-        ),
-        'edit' => array(
-            'title'  => 'Edit Product',
-            'view'   => 'products/edit',
-            'assets' => array(
-                'custom' => array(
-                    'js' => array(),
+                    'js' => array(
+                    ),
                 ),
             ),
         ),

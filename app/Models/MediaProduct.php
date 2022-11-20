@@ -5,20 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductTag extends Model
+class MediaProduct extends Model
 {
     use HasFactory;
-
     protected $fillable = [
+        'media_id',
         'product_id',
-        'tag_id',
+        'index',
     ];
 
     public function product(){
         return $this->belongsTo(Product::class);
     }
 
-    public function tag(){
-        return $this->belongsTo(Product::class);
+    public function media(){
+        return $this->belongsTo(Media::class);
     }
 }

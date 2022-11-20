@@ -1,18 +1,7 @@
-@php
-    $fake = [
-        'mainPhoto' => 'https://ichef.bbci.co.uk/news/976/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg',
-        'smallerPhotos' => [
-            'https://ichef.bbci.co.uk/news/976/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg',
-            'https://ichef.bbci.co.uk/news/976/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg',
-            'https://ichef.bbci.co.uk/news/976/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg',
-            'https://ichef.bbci.co.uk/news/976/cpsprodpb/67CF/production/_108857562_mediaitem108857561.jpg',
-        ]
-    ];
-@endphp
 <x-base-layout>
     <style>
         #working div {
-            /* outline: 1px solid black; */
+            outline: 1px solid black;
         }
     </style>
     <div id="working">
@@ -22,12 +11,14 @@
                 {{-- photos --}}
                 <div style="height: 334px" class="col-4">
                     {{theme()->getView('partials/product-library/_product-library', [
-                        'mainPhoto' => $fake['mainPhoto'],
-                        'smallerPhotos' => $fake['smallerPhotos'],
+                        'medias' => $product->medias,
                     ])}}
                 </div>
                 {{-- other stuff on the right --}}
-                <div class="col-8">stuff on the right</div>
+                <div class="col-8">
+                    <div class="text-dark fw-bolder fs-4 mb-2">{{$product['name']}}</div>
+                    <div class="fs-9">{{$product->purchase_count}} purchases</div>
+                </div>
             </div>
         </div>
         {{-- description and related products --}}

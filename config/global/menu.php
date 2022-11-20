@@ -264,12 +264,7 @@ return array(
                 'items' => array(
                     array(
                         'title'  => 'Add New Product',
-                        'path'   => 'products/add',
-                        'bullet' => '<span class="bullet bullet-dot"></span>',
-                    ),
-                    array(
-                        'title'  => 'Edit Product',
-                        'path'   => 'products/edit',
+                        'path'   => 'products/create',
                         'bullet' => '<span class="bullet bullet-dot"></span>',
                     ),
                     array(

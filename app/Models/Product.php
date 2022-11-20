@@ -18,7 +18,11 @@ class Product extends Model
         'hidden',
     ];
 
+    public function medias(){
+        return $this->hasManyThrough(Media::class, MediaProduct::class);
+    }
+
     public function tags(){
-        return $this->belongsToMany(Tag::class)->withPivot('tag_id');
+        return $this->hasManyThrough(Tag::class, ProductTag::class);
     }
 }

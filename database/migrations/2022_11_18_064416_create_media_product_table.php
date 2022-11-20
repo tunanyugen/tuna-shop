@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreign('media_id')->references('id')->on(Media::class)->onDelete('cascade');
             $table->foreignId('product_id');
             $table->foreign('product_id')->references('id')->on(Product::class)->onDelete('cascade');
+            $table->integer('index');
             $table->timestamps();
         });
     }
