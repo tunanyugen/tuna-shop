@@ -12,4 +12,8 @@ class Media extends Model
     protected $fillable = [
         'url',
     ];
+
+    public function products(){
+        return $this->belongsToMany(Product::class);
+    }
 }

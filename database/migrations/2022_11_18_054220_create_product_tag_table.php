@@ -18,9 +18,9 @@ return new class extends Migration
         Schema::create('product_tag', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id');
-            $table->foreign('product_id')->references('id')->on(Product::class)->onDelete('cascade');
+            $table->foreign('product_id')->references('id')->on((new Product)->getTable())->onDelete('cascade');
             $table->foreignId('tag_id');
-            $table->foreign('tag_id')->references('id')->on(Tag::class)->onDelete('cascade');
+            $table->foreign('tag_id')->references('id')->on((new Tag)->getTable())->onDelete('cascade');
             $table->timestamps();
         });
     }

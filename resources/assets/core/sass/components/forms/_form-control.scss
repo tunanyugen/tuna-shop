@@ -58,6 +58,10 @@
 	&.form-control-flush {
 		@include input-reset();
 	}
+
+	&.form-contrl-90 {
+		width: 90px;
+	}
 }
 
 // Placeholder colors

@@ -13,16 +13,19 @@ class Product extends Model
         'name',
         'price',
         'purchase_count',
-        'stock_count',
         'description',
         'hidden',
     ];
 
-    public function medias(){
-        return $this->hasManyThrough(Media::class, MediaProduct::class);
+    public function media(){
+        return $this->belongsToMany(Media::class);
     }
 
     public function tags(){
-        return $this->hasManyThrough(Tag::class, ProductTag::class);
+        return $this->belongsToMany(Tag::class);
+    }
+
+    public function product_variants(){
+        return $this->hasMany(ProductVariant::class);
     }
 }

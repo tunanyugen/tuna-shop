@@ -1,6 +1,6 @@
 @php
     // params
-    // $medias: images or videos
+    // $media: images or videos
     
     $productLibraryId = 'kt_product-library_' . uniqid();
     $popupId = $productLibraryId . '-popup';
@@ -8,17 +8,17 @@
 <div class="product-library" id="{{ $productLibraryId }}">
     {{-- main photo --}}
     <div class="h-75 d-flex align-items-center justify-content-center">
-        @if (isset($medias[0]))
-            <img class="product-library__main" src="{{ $medias[0] }}" />
+        @if (isset($media[0]))
+            <img class="product-library__main" src="{{ $media[0]->url }}" />
         @else
             <img class="product-library__main" src="{{ asset('demo1/media/icons/duotune/custom/Plus.svg') }}" />
         @endif
     </div>
     {{-- smaller photos --}}
     <div class="product-library__container h-25 d-flex align-items-center justify-content-center">
-        @foreach ($medias as $index=>$src)
+        @foreach ($media as $index=>$singleMedia)
             @if ($index > 0)
-                <img src="{{ $src }}">
+                <img src="{{ $singleMedia->url }}">
             @endif
         @endforeach
         <img src="{{ asset('demo1/media/icons/duotune/custom/Plus.svg') }}">

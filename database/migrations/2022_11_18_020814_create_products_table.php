@@ -17,8 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('price');
-            $table->unsignedInteger('purchase_count');
-            $table->unsignedInteger('stock_count');
+            $table->unsignedInteger('purchase_count')->default(0);
             $table->mediumText('description')->nullable();
             $table->boolean('hidden')->default(true);
             $table->timestamps();

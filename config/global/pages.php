@@ -135,6 +135,7 @@ return array(
             'assets' => array(
                 'custom' => array(
                     'js' => array(
+                        'js/custom/pages/products/create.js'
                     ),
                 ),
             ),

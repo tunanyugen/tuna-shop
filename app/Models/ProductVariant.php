@@ -5,22 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductTag extends Model
+class ProductVariant extends Model
 {
     use HasFactory;
 
-    protected $table = 'product_tag';
-
     protected $fillable = [
         'product_id',
-        'tag_id',
+        'name',
+        'stock_count',
     ];
 
     public function product(){
-        return $this->belongsTo(Product::class);
-    }
-
-    public function tag(){
         return $this->belongsTo(Product::class);
     }
 }

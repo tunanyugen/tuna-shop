@@ -18,10 +18,11 @@ return new class extends Migration
         Schema::create('media_product', function (Blueprint $table) {
             $table->id();
             $table->foreignId('media_id');
-            $table->foreign('media_id')->references('id')->on(Media::class)->onDelete('cascade');
+            error_log((new Media)->getTable());
+            $table->foreign('media_id')->references('id')->on((new Media)->getTable())->onDelete('cascade');
             $table->foreignId('product_id');
-            $table->foreign('product_id')->references('id')->on(Product::class)->onDelete('cascade');
-            $table->integer('index');
+            $table->foreign('product_id')->references('id')->on((new Product)->getTable())->onDelete('cascade');
+            $table->integer('index')->default(0);
             $table->timestamps();
         });
     }
