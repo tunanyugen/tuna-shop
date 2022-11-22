@@ -21,6 +21,8 @@
                 <img src="{{ $singleMedia->url }}">
             @endif
         @endforeach
-        <img src="{{ asset('demo1/media/icons/duotune/custom/Plus.svg') }}">
+        <div class="d-flex align-items-center justify-content-center">
+            <img src="{{ asset('demo1/media/icons/duotune/custom/Plus.svg') }}">
+        </div>
     </div>
 </div>
